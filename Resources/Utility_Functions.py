@@ -1,6 +1,8 @@
 import random
 import os
 import json
+import csv
+import logging
 
 
 def get_random_number(start, end):
@@ -28,3 +30,26 @@ def read_json(path, file_name):
     """
     with open(os.path.join(os.path.join(os.getcwd(), str(path)), file_name)) as json_obj:
         return json.load(json_obj)
+
+
+def read_csv(file_path):
+    """
+    Reads data from csv file.
+    :param file_path: CSV file path
+    :return:
+    """
+    rows = []
+    try:
+        with open(file_path, 'r') as file:
+            csvreader = csv.reader(file)
+            header = next(csvreader)
+            for row in csvreader:
+                rows.append(row)
+        logging.info(header)
+        logging.info(rows)
+    except Exception:
+        logging.info('File not found')
+
+
+if __name__ == '__main__':
+    read_csv("/Users/shakti/Documents/Trigent/api_automation/TestData/user_data.csv")
