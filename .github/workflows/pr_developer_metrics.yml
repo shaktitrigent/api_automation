@@ -3,7 +3,7 @@ name: Developer metrics for PR
 on:
   pull_request:
     branches:
-      - release
+      - master
 #    types: [closed]
 jobs:
   job1:
