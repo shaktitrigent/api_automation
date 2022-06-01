@@ -1,6 +1,5 @@
 pipeline{
     agent any
-
     stages{
         stage('Checkout'){
             steps{
@@ -17,15 +16,13 @@ pipeline{
         }
         stage('Run Test Scripts'){
             steps{
-
                 sh " python3 -m pipenv run robot -d OutputFiles TestCases/Reqres_API_Tests.robot "
-                sh " python3 -m pipenv run robot -d OutputFiles -i Sanity TestCases/Reqres_API_Tests.robot "
-                sh " python3 -m pipenv run robot -d OutputFiles -e Smoke TestCases/Reqres_API_Tests.robot "
+//                 sh " python3 -m pipenv run robot -d OutputFiles -i Sanity TestCases/Reqres_API_Tests.robot "
+//                 sh " python3 -m pipenv run robot -d OutputFiles -e Smoke TestCases/Reqres_API_Tests.robot "
             }
         }
         stage('Post Actions'){
             steps{
-
                 archiveArtifacts(artifacts: "**/*.html", followSymlinks: false)
             }
         }
