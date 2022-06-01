@@ -1,0 +1,33 @@
+pipeline{
+    agent any
+
+    stages{
+        stage('Checkout'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'a8c6eeff-26b9-46b4-93ab-f8cf1e926a70', url: 'https://github.com/shaktitrigent/api_automation.git']]])
+            }
+        }
+        stage('Build'){
+            steps{
+               sh "pip3 install pipenv"
+               sh "python3 -m pipenv shell --fancy"
+               sh "python3 -m pipenv install"
+            //   sh "chmod 777 OutputFiles/*"
+            }
+        }
+        stage('Run Test Scripts'){
+            steps{
+
+                sh " python3 -m pipenv run robot -d OutputFiles TestCases/Reqres_API_Tests.robot "
+                sh " python3 -m pipenv run robot -d OutputFiles -i Sanity TestCases/Reqres_API_Tests.robot "
+                sh " python3 -m pipenv run robot -d OutputFiles -e Smoke TestCases/Reqres_API_Tests.robot "
+            }
+        }
+        stage('Post Actions'){
+            steps{
+
+                archiveArtifacts(artifacts: "**/*.html", followSymlinks: false)
+            }
+        }
+    }
+}
