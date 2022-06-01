@@ -24,4 +24,4 @@ jobs:
           python3 -m pipenv run robot -d OutputFiles TestCases/Reqres_API_Tests.robot
         env:
           API_KEY: ${{ secrets.API_TOKEN_GITHUB }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo "🍏 This job's status is ${{ job.status }}.
