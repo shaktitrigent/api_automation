@@ -1,15 +1,7 @@
 name: Pull Request Developer Metrics
 on:
   pull_request:
-    branches: [ master ]
 
 jobs:
   Developer_Metrics:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "The name of the branch is ${{ github.ref }}"
-      - uses: actions/checkout@v2
-      - uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@master
-        with:
-          API_KEY: ${{ secrets.API_TOKEN_GITHUB }}
-      - run: echo "🍏 This job's status is ${{ job.status }}."
+    uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@master
