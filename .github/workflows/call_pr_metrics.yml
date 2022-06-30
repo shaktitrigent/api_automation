@@ -9,7 +9,7 @@ jobs:
     steps:
       - run: echo "The name of the branch is ${{ github.ref }}"
       - uses: actions/checkout@v2
-      - uses: ./.github/workflows/pr_metrics.yml@master
+      - uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@master
         env:
             API_KEY: ${{ secrets.API_TOKEN_GITHUB }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
