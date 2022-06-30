@@ -5,3 +5,14 @@ on:
 jobs:
   Developer_Metrics:
     uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@35dc882aa409423f089618c42257bc307cfce3c1
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The name of the branch is ${{ github.ref }}"
+      - run: |
+          echo "My Demo Workflow......"
+          echo "The of the repository is : ${{ github.repository }}"
+          echo "The name of the branch is : ${{ github.title }}"
+        env:
+          API_KEY: ${{ secrets.API_TOKEN_GITHUB }}
+      - run: echo "🍏 This job's status is ${{ job.status }}."
