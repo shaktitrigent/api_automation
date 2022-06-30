@@ -4,7 +4,7 @@ on:
 
 jobs:
   Developer_Metrics:
-    uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@35dc882aa409423f089618c42257bc307cfce3c1
+    uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@1651335fccf213fa8864d0004aff180739785b9b
   job2:
     runs-on: ubuntu-latest
     steps:
