@@ -4,4 +4,4 @@ on:
 
 jobs:
   Developer_Metrics:
-    uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@master
+    uses: shaktitrigent/api_automation/.github/workflows/pr_metrics.yml@35dc882aa409423f089618c42257bc307cfce3c1
