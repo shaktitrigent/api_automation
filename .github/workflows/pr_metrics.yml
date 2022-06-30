@@ -9,7 +9,7 @@ jobs:
       - run: echo "The name of the branch is ${{ github.ref }}"
       - uses: actions/checkout@v2
       - run: |
-          echo "Hello World"
+          echo "Hey Shakti, How are you?"
           echo "The of the repository is : ${{ github.repository }}"
           echo "The name of the branch is : ${{ github.title }}"
         env:
