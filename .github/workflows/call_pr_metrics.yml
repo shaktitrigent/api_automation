@@ -1,7 +1,7 @@
 name: Pull Request Developer Metrics
 on:
   pull_request:
-    branches: [ release ]
+    branches: [ master ]
 
 jobs:
   Developer_Metrics:
