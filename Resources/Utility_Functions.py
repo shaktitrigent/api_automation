@@ -15,8 +15,8 @@ def get_random_number(start, end):
 
 
 def get_random_date():
-    date = get_random_number(1, 12)
-    month = get_random_number(1, 28)
+    date = get_random_number(1, 28)
+    month = get_random_number(1, 12)
     year = get_random_number(1990, 2017)
     return str(date) + '/' + str(month) + '/' + str(year)
 
