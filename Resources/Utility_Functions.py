@@ -15,8 +15,8 @@ def get_random_number(start, end):
 
 
 def get_random_date():
-    date = get_random_number(1, 12)
-    month = get_random_number(1, 28)
+    date = get_random_number(1, 28)
+    month = get_random_number(1, 12)
     year = get_random_number(1990, 2017)
     return str(date) + '/' + str(month) + '/' + str(year)
 
@@ -24,7 +24,7 @@ def get_random_date():
 def read_json(path, file_name):
     """
     This method will read the JSON from different folder and return the JSON object.
-    :param path: Path to the jsin file
+    :param path: Path to the json file
     :param file_name: json file name
     :return: JSON object
     """
