@@ -37,7 +37,7 @@ Update user Details
     &{header}=    create dictionary    Content-Type=application/json
     ${response}=   PUT On Session    url   api/users/${user_id}    json=${req_body}     headers=${header}
     log     ${response.status_code}
-    Should Contain   '${response.status_code}'  20   Fail   Test Failed: Expected response 200, got ${response.status_code} for 'Update students details'.
+    Should Contain    ${response.status_code}'  20   Fail   Test Failed: Expected response 200, got ${response.status_code} for 'Update students details'.
     log      ${response.json()}
 
 Get specific user details
@@ -45,7 +45,7 @@ Get specific user details
     &{header}=    create dictionary    Content-Type=application/json
     ${response}=   GET On Session    url   api/users/${user_id}    headers=${header}
     log     ${response.status_code}
-    Should Contain   '${response.status_code}'  20   Fail   Test Failed: Expected response 200, got ${response.status_code} while getting user details for - ${user_id}.
+    Should Contain    ${response.status_code}'  20   Fail   Test Failed: Expected response 200, got ${response.status_code} while getting user details for - ${user_id}.
     log      ${response.json()}
 
 Delete user details
@@ -53,4 +53,4 @@ Delete user details
     &{header}=    create dictionary    Content-Type=application/json
     ${response}=   DELETE On Session    url   api/users/${user_id}    headers=${header}
     log     ${response.status_code}
-    Should Contain   '${response.status_code}'  20   Fail   Test Failed: Expected response 200, got ${response.status_code} for 'Delete user details'.
+    Should Contain    ${response.status_code}'  20   Fail   Test Failed: Expected response 200, got ${response.status_code} for 'Delete user details'.
