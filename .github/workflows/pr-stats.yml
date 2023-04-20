@@ -1,7 +1,10 @@
 name: Pull Request Stats
 
 on: pull_request
-
+outputs:
+   ui_version_tag:
+   description: 'Version tag for docker image'
+   value: ${{ jobs.build.outputs.version }}
 jobs:
   stats:
     runs-on: ubuntu-latest
