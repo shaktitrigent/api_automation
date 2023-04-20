@@ -1,11 +1,15 @@
 name: Pull Request Stats
 
 on: pull_request
-
+outputs:
+   ui_version_tag:
+   description: 'Version tag for docker image'
+   value: ${{ jobs.build.outputs.version }}
 jobs:
   stats:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "Build Version - ${{ jobs.build.output.version }}"
       - name: Run pull request stats
         uses: flowwer-dev/pull-request-stats@v2.3.0
         with:
